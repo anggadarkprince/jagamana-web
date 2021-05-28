@@ -35,6 +35,8 @@ if (!function_exists('permalink'))
 
     function permalink_id($permalink)
     {
-        return end(explode("-",$permalink));
+	$links = explode("-", $permalink);
+
+        return end($links);
     }
 }

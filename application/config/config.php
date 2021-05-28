@@ -14,9 +14,9 @@
 | path to your installation.
 |
 */
-$root = (isset($_SERVER["HTTPS"])?"https://":"http://").$_SERVER['HTTP_HOST'];
-$root = str_replace(basename($_SERVER["SCRIPT_NAME"]),"",$_SERVER["SCRIPT_NAME"]);
-$root = "http://localhost/jagamana";
+$root = (isset($_SERVER["HTTPS"]) ? "https://" : "http://") . $_SERVER['HTTP_HOST'];
+$root = $root . str_replace(basename($_SERVER["SCRIPT_NAME"]), "", $_SERVER["SCRIPT_NAME"]);
+//$root = "http://jagamana.angga-ari.com/";
 $config['base_url']	= $root;
 
 /*
@@ -183,7 +183,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------

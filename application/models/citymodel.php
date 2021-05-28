@@ -42,7 +42,7 @@ class CityModel extends CI_Model
 
     public function read_indonesia_city()
     {
-        $query = $this->db->query("SELECT city.*, COUNT(cmp_id) company FROM (SELECT cty_id, cty_city FROM jm_view_location WHERE ctr_country = 'Indonesia') city LEFT JOIN jm_company ON cty_id = cmp_location GROUP BY cty_id  ORDER BY company DESC");
+        $query = $this->db->query("SELECT city.*, COUNT(cmp_id) company FROM (SELECT cty_id, cty_city FROM jm_view_location WHERE ctr_country = 'Indonesia') city LEFT JOIN jm_company ON cty_id = cmp_location GROUP BY cty_id, cty_city  ORDER BY company DESC");
         return $query->result_array();
     }
 
